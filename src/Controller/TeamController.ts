@@ -7,7 +7,8 @@ export class TeamController {
     try {
       conference = conference ? conference : "";
       team = team ? team : "";
-      const host = "http://192.168.1.110:5050";
+      const host = `${process.env.EXPO_PUBLIC_API_HOST}:${process.env.EXPO_PUBLIC_API_PORT}`;
+      //host = "http://192.168.1.110:5050";
       const endpoint = "/api/Nba/teams";
       const url = `${host}${endpoint}?conference=${conference}&team=${team}`
       console.log("url: ", url);
