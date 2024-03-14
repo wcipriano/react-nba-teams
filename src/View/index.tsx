@@ -33,13 +33,17 @@ const hendleSearch = () => {
         onChangeText={text => setTeam(text)}
         value={team}
       />
+      <Text
+        style={{width:"95%", height:40, marginBottom: 10, padding: 5}}>
+        API Host: {`${process.env.EXPO_PUBLIC_API_HOST}:${process.env.EXPO_PUBLIC_API_PORT}`}
+      </Text>
       <Button title="Buscar" onPress={hendleSearch} />
 
       <FlatList 
         data={teams}
         keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
-          <View style={{marginTop: 20}}>
+          <View style={{marginTop: 40}}>
             <Text> Name: {item.name}</Text>
             <Text> Conference: {item.conference}</Text>
             <Text> FullName: {item.fullName}</Text>
